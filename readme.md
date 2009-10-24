@@ -1,0 +1,1 @@
+Crappy class I use because I've been too lazy too look for one.
