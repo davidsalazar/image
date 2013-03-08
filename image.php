@@ -33,7 +33,7 @@ class Image
 			imagedestroy($this->im);
 	}
 
-    public function __tostring($type = 'jpg', $quality = 75)
+    public function __invoke($type = 'jpg', $quality = 75)
     {
         ob_start();
 
@@ -166,6 +166,8 @@ class Image
 		$dest = imagecreatetruecolor($new_width, $new_height);
 	
 		// for transparancy
+	    imagecolortransparent($dest, imagecolorallocatealpha($dest, 0, 0, 0, 127));
+
 		imagealphablending($dest, false);  
 		imagesavealpha($dest, true);
 
